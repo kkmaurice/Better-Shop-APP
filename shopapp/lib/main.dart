@@ -3,14 +3,16 @@ import 'dart:io';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shopapp/Auth/auth_screens/main_page.dart';
 import 'package:shopapp/Providers/cart_provider.dart';
 import 'package:shopapp/Providers/product_controller.dart';
 import 'package:shopapp/Routes/routes.dart';
-import 'package:shopapp/Screens/payment_page.dart';
-import 'package:shopapp/Screens/product_details.dart';
+import 'package:shopapp/Screens/google_map_screen.dart';
 
+import 'Auth/auth_screens/main_page.dart';
 import 'Providers/orders.dart';
+import 'Screens/cart_screen.dart';
+import 'Screens/order_screen.dart';
+import 'Screens/product_details.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -44,14 +46,19 @@ class MyApp extends StatelessWidget {
           hoverColor: Colors.transparent,
         ),
         //home: const MainPage(),
-
-        initialRoute: RoutesManager.mainPage,
+        initialRoute: MainPage.routeName,
         onGenerateRoute: RoutesManager.generateRoute,
-
+        // routes: {
+        //   //'/' :(context) => const MainPage(),
+        //   '/details': (context) => const ProductDetails(),
+        //   '/cart': (context) => const CartScreen(),
+        //   '/order': (context) => const OrderScreen(),
+        // },
         routes: {
-          '/': (context) => const MainPage(),
+          MainPage.routeName: (context) => const MainPage(),
           ProductDetails.routName: (context) => const ProductDetails(),
-          OrderDetails.routName:(context) => const OrderDetails()
+          GoogleMapsPage.routeName: (context) => const GoogleMapsPage(),
+          
         },
       ),
     );

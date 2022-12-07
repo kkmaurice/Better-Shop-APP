@@ -7,12 +7,15 @@ import 'package:shopapp/Screens/input_screen.dart';
 import 'package:shopapp/Screens/payment_page.dart';
 import 'package:shopapp/Screens/product_details.dart';
 
+import '../Screens/google_map_screen.dart';
+
 class RoutesManager{
   static const mainPage = '/';
   static const homeScreen = '/home_screen';
   static const productInputScreen = '/product_input_screen';
   static const productDetailsScreen = '/product_details';
   static const orderDetailsScreen = '/order_details';
+  static const googleMapsScreen = '/google_maps_screen';
 
   static Route<dynamic> generateRoute(RouteSettings settings){
     switch(settings.name) {
@@ -26,6 +29,8 @@ class RoutesManager{
       return MaterialPageRoute(builder: (context) => const ProductInputScreen());
       case productDetailsScreen:
       return MaterialPageRoute(builder: (context) => const ProductDetails());
+      case googleMapsScreen: 
+      return MaterialPageRoute(builder: (context) => const GoogleMapsPage());
       case orderDetailsScreen:
       return MaterialPageRoute(builder: (context) => const OrderDetails());
 

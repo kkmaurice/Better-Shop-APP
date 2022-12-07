@@ -31,4 +31,25 @@ class FirebaseService{
       return e.toString();
     }
   }
+
+  // filter products by search keyword
+  //  Future<List<Product>> searchProducts(String productName) async {
+  //   // code to convert the first character to uppercase
+  //   String searchKey = productName[0].toUpperCase() + productName.substring(1);
+  //   return await _ref
+  //       .where("title", isGreaterThanOrEqualTo: searchKey)
+  //       .orderBy("title")
+  //       .startAt([searchKey])
+  //       .endAt(['$searchKey\uf8ff'])
+  //       .get()
+  //       .then((result) {
+  //     List<Product> products = [];
+  //     for (DocumentSnapshot product in result.docs) {
+  //       products.add(Product.fromMap(product as Map<String, dynamic>));
+  //     }
+  //     return products;
+  //   });
+  // }
+
+
 }

@@ -31,13 +31,9 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   static const List<Widget> _pages = <Widget>[
-  // Home(),
-  // ImageScreen(),
-  // SoundScreen(),
-  // Guide(),
   ProductOverView(),
-  //CartScreen(),
-  //OrderScreen(),
+  CartScreen(),
+  OrderScreen(),
   FavoriteProducts()
 ];
 
@@ -49,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
         bottomNavigationBar: Container(
         //alignment: Alignment.bottomCenter,
         padding: const EdgeInsets.only(top: 5),
-        height: 43,
+        height: 53,
         decoration: BoxDecoration(
           color: Colors.grey.shade800.withOpacity(0.9),
           // borderRadius: const BorderRadius.only(
@@ -65,7 +61,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 _onItemTapped(0);
               },
               child: Container(
-                //padding: const EdgeInsets.only(bottom: 5),
+                padding: const EdgeInsets.only(bottom: 5),
                 child: Column(
                   children: [
                     Icon(
@@ -79,63 +75,63 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
             ),
-            // Container(
-            //   padding: EdgeInsets.zero,
-            //   child: Column(
-            //     children: [
-            //       Badge(
-            //         value: context.watch<CartProvider>().itemCount.toString(),
-            //         color: Colors.red,
-            //         child: Container(
-            //           padding: const EdgeInsets.all(0),
-            //           child: IconButton(
-            //             onPressed: (){
-            //               _onItemTapped(1);
-            //             }, 
-            //             icon: Icon(
-            //               Icons.shopping_cart_outlined,
-            //               size: 35,
-            //               color: _selectedIndex == 1? _color:_colorNormal,
-            //               )),
-            //         )),
+            Container(
+              padding: EdgeInsets.zero,
+              child: Column(
+                children: [
+                  Badge(
+                    value: context.watch<CartProvider>().itemCount.toString(),
+                    color: Colors.red,
+                    child: Container(
+                      padding: const EdgeInsets.all(0),
+                      child: IconButton(
+                        onPressed: (){
+                          _onItemTapped(1);
+                        }, 
+                        icon: Icon(
+                          Icons.shopping_cart_outlined,
+                          size: 35,
+                          color: _selectedIndex == 1? _color:_colorNormal,
+                          )),
+                    )),
                       
-            //     ],
-            //   ),
-            // ),
+                ],
+              ),
+            ),
           
-            // GestureDetector(
-            //   onTap: (){
-            //     _onItemTapped(2);
-            //   },
-            //   child: Container(
-            //     //padding: const EdgeInsets.only(bottom: 5),
-            //     child: Column(
-            //       children: [
-            //         Icon(Icons.shopping_bag_outlined,
-            //         color: _selectedIndex == 2 ? _color : _colorNormal
-            //         ),
-            //         Expanded(
-            //           child: Text('Orders',style: TextStyle(
-            //             color: _selectedIndex == 2 ? _color : _colorNormal
-            //           ),))  
-            //       ],
-            //     ),
-            //   ),
-            // ),
             GestureDetector(
               onTap: (){
-                _onItemTapped(1);
+                _onItemTapped(2);
+              },
+              child: Container(
+                //padding: const EdgeInsets.only(bottom: 5),
+                child: Column(
+                  children: [
+                    Icon(Icons.shopping_bag_outlined,
+                    color: _selectedIndex == 2 ? _color : _colorNormal
+                    ),
+                    Expanded(
+                      child: Text('Orders',style: TextStyle(
+                        color: _selectedIndex == 2 ? _color : _colorNormal
+                      ),))  
+                  ],
+                ),
+              ),
+            ),
+            GestureDetector(
+              onTap: (){
+                _onItemTapped(3);
               },
               child: Container(
                 //padding: const EdgeInsets.only(bottom: 5),
                 child: Column(
                   children: [
                     Icon(Icons.favorite_outlined,
-                    color: _selectedIndex == 1 ? _color : _colorNormal
+                    color: _selectedIndex == 3 ? _color : _colorNormal
                     ),
                     Expanded(
                       child: Text('Favorites',style: TextStyle(
-                        color: _selectedIndex == 1 ? _color : _colorNormal
+                        color: _selectedIndex == 3 ? _color : _colorNormal
                       ),))  
                   ],
                 ),

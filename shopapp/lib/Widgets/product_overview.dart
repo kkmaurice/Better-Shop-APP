@@ -48,7 +48,7 @@ class ProductOverviewWidget extends StatelessWidget {
         GestureDetector(
           onTap: () {
             Navigator.of(context)
-                .pushNamed(ProductDetails.routName, arguments: product);
+                .pushNamed(ProductDetails.routName, arguments: Product(userId: product.userId, productId: product.productId, title: product.title, description: product.description, oldPrice: product.oldPrice, price: product.price, category: product.category, name: product.name, location: product.location, phone: product.phone, imageUrl: product.imageUrl));
           },
           child: Container(
             decoration: BoxDecoration(

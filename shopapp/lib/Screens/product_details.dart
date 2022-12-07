@@ -15,7 +15,6 @@ class ProductDetails extends StatelessWidget {
 
   static const routName = '/product_details';
 
-  //final String _phoneNumber = '0772820840';
 
   @override
   Widget build(BuildContext context) {

@@ -29,7 +29,7 @@ class OrderProvider with ChangeNotifier{
 
   Future<List<OrderItem>> fetchOrders() async{
     var myOrder = await _service.getOrders();
-    print('${myOrder}');
+    //print('${myOrder}');
     if(myOrder is List<OrderItem>){
       _orders = myOrder;
 

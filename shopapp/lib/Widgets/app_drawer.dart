@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shopapp/Routes/routes.dart';
+import 'package:shopapp/Screens/google_map_screen.dart';
 import 'package:shopapp/Screens/input_screen.dart';
 import 'package:shopapp/Screens/product_overviewScreen.dart';
 import 'package:shopapp/Services/auth.dart';
@@ -69,6 +70,38 @@ class AppDrawer extends StatelessWidget {
           const Divider(),
           ListTile(
             leading: const Icon(
+              Icons.map,
+              size: 30,
+            ),
+            title: Text(
+              'Go To Map',
+              style: GoogleFonts.tangerine(fontSize: 30,fontWeight: FontWeight.bold),
+            ),
+            onTap: () {
+              Navigator.of(context).pushReplacementNamed(GoogleMapsPage.routeName);
+            },
+          ),
+          const Divider(),
+          ListTile(
+            leading: const Icon(
+              Icons.rate_review,
+              size: 30,
+            ),
+            title: Text(
+              'Rate Us',
+              style: GoogleFonts.tangerine(fontSize: 30,fontWeight: FontWeight.bold),
+            ),
+            onTap: () {
+              showDialog(
+                  context: context,
+                  builder: (context) {
+                    return rateUsDialog(context);
+                  });
+            },
+          ),
+          const Divider(),
+          ListTile(
+            leading: const Icon(
               Icons.login_outlined,
               size: 30,
             ),
@@ -84,4 +117,25 @@ class AppDrawer extends StatelessWidget {
       ),
     );
   }
+}
+
+Widget rateUsDialog(BuildContext context) {
+  return AlertDialog(
+    title: const Text('Rate Us'),
+    content: const Text('Please Rate Us'),
+    actions: [
+      TextButton(
+        onPressed: () {
+          Navigator.of(context).pop();
+        },
+        child: const Text('Cancel'),
+      ),
+      TextButton(
+        onPressed: () {
+          Navigator.of(context).pop();
+        },
+        child: const Text('Ok'),
+      ),
+    ],
+  );
 }

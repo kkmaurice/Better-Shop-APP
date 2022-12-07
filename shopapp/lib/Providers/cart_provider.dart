@@ -1,6 +1,3 @@
-// ignore_for_file: avoid_function_literals_in_foreach_calls, avoid_print, prefer_final_fields
-
-import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:shopapp/Models/cart.dart';

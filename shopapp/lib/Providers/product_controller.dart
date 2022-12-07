@@ -12,8 +12,25 @@ class ProductController with ChangeNotifier{
   final _user = Auth().auth.currentUser;
 
    List<Product> _products = [];
+   List<Product> _searchResult = [];
 
   List<Product> get products => _products;
+  List<Product> get searchResult => _searchResult;
+
+
+  void runFilter(String enteredKeyword) {
+    List<Product> results = [];
+    if (enteredKeyword.isEmpty) {
+      results = _products;
+    } else {
+      results = _products.where((product) => product.title.toLowerCase().contains(enteredKeyword.toLowerCase())).toList();
+    }
+      _searchResult = results;
+      notifyListeners();
+  }
+  
+
+
   
   
   // toggle favorite status
@@ -26,6 +43,11 @@ class ProductController with ChangeNotifier{
   // get favorite products
   List<Product> get favoriteProducts{
     return _products.where((element) => element.isFavorite).toList();
+  }
+
+  // get products by category
+  List<Product> getProductsByCategory(String category){
+    return _products.where((element) => element.category == category).toList();
   }
 
   // Add product
@@ -68,4 +90,6 @@ class ProductController with ChangeNotifier{
     notifyListeners();
     return _products;
   }
+
+
 }

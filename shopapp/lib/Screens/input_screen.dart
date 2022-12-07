@@ -1,8 +1,6 @@
 // ignore_for_file: prefer_final_fields, use_build_context_synchronously
 
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:shopapp/Providers/product_controller.dart';

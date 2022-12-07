@@ -18,7 +18,7 @@ class _SignUpState extends State<SignUp> {
 
    TextEditingController _emailController = TextEditingController();
    TextEditingController _passwordController = TextEditingController();
-   TextEditingController _confirmPasswordController = TextEditingController();
+   final TextEditingController _confirmPasswordController = TextEditingController();
 
    bool _isloading = false;
 

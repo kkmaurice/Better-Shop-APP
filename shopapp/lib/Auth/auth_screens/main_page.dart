@@ -1,13 +1,13 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:shopapp/Screens/home_screen.dart';
 import 'package:shopapp/Services/auth.dart';
 
 import 'auth_page.dart';
 
 class MainPage extends StatefulWidget {
+  static const routeName = '/';
+
   const MainPage({Key? key}) : super(key: key);
 
   @override

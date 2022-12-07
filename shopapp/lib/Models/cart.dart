@@ -38,5 +38,4 @@ class CartItem {
       'price': price
     };
   }
-
 }
