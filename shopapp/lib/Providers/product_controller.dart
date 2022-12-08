@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:shopapp/Models/products.dart';
 import 'package:shopapp/Services/auth.dart';
-import 'package:shopapp/Services/firebase_services.dart';
+import 'package:shopapp/Services/product_services.dart';
 //import 'package:shopapp/Services/product_service.dart';
 
 class ProductController with ChangeNotifier{

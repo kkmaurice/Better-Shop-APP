@@ -1,16 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'package:shopapp/Routes/routes.dart';
 import 'package:shopapp/Screens/google_map_screen.dart';
 import 'package:shopapp/Screens/input_screen.dart';
 import 'package:shopapp/Screens/product_overviewScreen.dart';
 import 'package:shopapp/Services/auth.dart';
 
-class AppDrawer extends StatelessWidget {
+import '../Providers/dark_theme.dart';
+
+class AppDrawer extends StatefulWidget {
   const AppDrawer({Key? key}) : super(key: key);
 
   @override
+  State<AppDrawer> createState() => _AppDrawerState();
+}
+
+class _AppDrawerState extends State<AppDrawer> {
+  @override
   Widget build(BuildContext context) {
+    final themeState = context.read<DarkThemeProvider>();
     return Drawer(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -67,6 +76,16 @@ class AppDrawer extends StatelessWidget {
               Navigator.of(context).pushReplacementNamed(ProductInputScreen.routeName);
             },
           ),
+          const Divider(),
+          SwitchListTile(
+            title: Text('Theme'),
+            secondary: Icon(themeState.getDarkTheme ? Icons.dark_mode_outlined : Icons.light_mode_outlined),
+            value: themeState.getDarkTheme, 
+            onChanged: ((value) {
+              setState(() {
+              themeState.setDarkTheme = value;
+            });
+            })),
           const Divider(),
           ListTile(
             leading: const Icon(
