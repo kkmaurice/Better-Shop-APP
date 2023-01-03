@@ -18,7 +18,7 @@ class ProductController with ChangeNotifier{
   List<Product> get searchResult => _searchResult;
 
 
-  void runFilter(String enteredKeyword) {
+  void runFilter(String enteredKeyword) async{
     List<Product> results = [];
     if (enteredKeyword.isEmpty) {
       results = _products;
@@ -47,7 +47,7 @@ class ProductController with ChangeNotifier{
 
   // get products by category
   List<Product> getProductsByCategory(String category){
-    return _products.where((element) => element.category == category).toList();
+    return _products.where((element) => element.category.toLowerCase() == category.toLowerCase()).toList();
   }
 
   // Add product
@@ -90,6 +90,7 @@ class ProductController with ChangeNotifier{
     notifyListeners();
     return _products;
   }
+  
 
 
 }

@@ -9,13 +9,10 @@ import 'package:shopapp/Providers/dark_theme.dart';
 import 'package:shopapp/Providers/product_controller.dart';
 import 'package:shopapp/Routes/routes.dart';
 import 'package:shopapp/Screens/google_map_screen.dart';
-import 'package:shopapp/Services/dark_theme_prefs.dart';
 import 'package:shopapp/consts/theme_data.dart';
 
 import 'Auth/auth_screens/main_page.dart';
 import 'Providers/orders.dart';
-import 'Screens/cart_screen.dart';
-import 'Screens/order_screen.dart';
 import 'Screens/product_details.dart';
 import 'firebase_options.dart';
 

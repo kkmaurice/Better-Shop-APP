@@ -42,6 +42,7 @@ class _ProductOverViewState extends State<ProductOverView> {
   Widget build(BuildContext context) {
     final product = context.watch<ProductController>().products;
     final searchingProduct = context.watch<ProductController>().searchResult;
+    final categoryProducts = context.watch<ProductController>().getProductsByCategory(_chips[_selectedIndex].toString());
     return Scaffold(
         drawer: const AppDrawer(),
         body: FutureBuilder(
@@ -109,7 +110,7 @@ class _ProductOverViewState extends State<ProductOverView> {
                                         _controller.text = '';
                                       },
                                       icon: const Icon(
-                                        Icons.cancel_outlined,
+                                        Icons.clear,
                                         size: 25,
                                         color: Colors.red,
                                       )),
@@ -187,10 +188,10 @@ class _ProductOverViewState extends State<ProductOverView> {
                                         return StaggeredTile.count(
                                             1, index.isEven ? 1.2 : 1.8);
                                       },
-                                      itemCount: searchingProduct.length,
+                                      itemCount: _controller.text.isEmpty? product.length : searchingProduct.length,
                                       itemBuilder: (context, index) {
                                         return ProductOverviewWidget(
-                                            product: searchingProduct[index]);
+                                            product: _controller.text.isEmpty? product[index] : searchingProduct[index]);
                                       }),
                                 ),
                               ),

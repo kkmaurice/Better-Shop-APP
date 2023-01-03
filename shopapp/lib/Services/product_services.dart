@@ -32,7 +32,7 @@ class FirebaseService{
     }
   }
 
-  // filter products by search keyword
+  //filter products by search keyword
   //  Future<List<Product>> searchProducts(String productName) async {
   //   // code to convert the first character to uppercase
   //   String searchKey = productName[0].toUpperCase() + productName.substring(1);
