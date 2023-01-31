@@ -44,7 +44,7 @@ dependencies:
   google_fonts: ^3.0.1
   staggered_grid_view_flutter: ^0.0.4
   transparent_image: ^2.0.0
-  badges: ^2.0.3
+  badges: ^3.0.2
   linux: ^0.0.0
   flutterwave: ^1.0.3
   url_launcher: ^6.1.6

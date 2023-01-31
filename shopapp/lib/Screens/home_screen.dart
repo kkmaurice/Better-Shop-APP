@@ -7,7 +7,6 @@ import 'package:shopapp/Screens/order_screen.dart';
 import 'package:shopapp/Screens/product_overviewScreen.dart';
 
 import '../Providers/cart_provider.dart';
-import '../Widgets/badge.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -81,11 +80,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Column(
                         children: [
                           Badge(
-                              value: context
+                              label: Text(context
                                   .watch<CartProvider>()
                                   .itemCount
-                                  .toString(),
-                              color: Colors.red,
+                                  .toString()),
+                              textColor: Colors.red,
                               child: Container(
                                 padding: const EdgeInsets.all(0),
                                 child: IconButton(
